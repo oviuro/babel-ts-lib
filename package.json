@@ -1,0 +1,41 @@
+{
+	"name": "babel-ts",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"scripts": {
+		"start": "concurrently --kill-others \"npm run build\" \"npm run type-check\"",
+		"build": "babel src --out-dir build --extensions \".ts\"",
+		"type-check": "tsc --noEmit"
+	},
+	"devDependencies": {
+		"@babel/cli": "7.0.0-beta.49",
+		"@babel/core": "7.0.0-beta.49",
+		"@babel/plugin-proposal-class-properties": "7.0.0-beta.49",
+		"@babel/plugin-proposal-object-rest-spread": "7.0.0-beta.49",
+		"@babel/preset-env": "7.0.0-beta.49",
+		"@babel/preset-typescript": "7.0.0-beta.49",
+		"@types/jest": "^23.3.1",
+		"@types/lodash": "^4.14.115",
+		"@types/node": "^10.5.5",
+		"concurrently": "^3.6.1",
+		"typescript": "2.9.1",
+		"ts-jest": "^23.0.1",
+		"jest": "^23.4.2"
+	},
+	"jest": {
+		"testEnvironment": "node",
+		"transform": {
+			"^.+\\.tsx?$": "ts-jest"
+		},
+		"testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+		"moduleFileExtensions": [
+			"ts",
+			"tsx",
+			"js",
+			"jsx",
+			"json",
+			"node"
+		]
+	}
+}
